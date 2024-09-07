@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentTrack = 0;
 
     // Establecer un volumen inicial más bajo (por ejemplo, 30%)
-    const initialVolume = 0.1;
+    const initialVolume = 0.2;
     audioPlayer.volume = initialVolume;
     volumeControl.value = initialVolume;
 
