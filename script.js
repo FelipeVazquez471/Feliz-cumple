@@ -215,12 +215,12 @@ document.addEventListener('DOMContentLoaded', function() {
     typeWriter(centerMessage, '¡Felices 2 décadas!', 40);
 
     // Iniciar la creación de popups y imágenes
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 5; i++) {
         setTimeout(() => {
             createPopup();
         });
     }
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
         setTimeout(() => {
             createImage();
         });
