@@ -1,0 +1,200 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-container {
+    text-align: center;
+    z-index: 2;
+}
+
+.center-message {
+    font-size: 4rem;
+    color: #e91e63;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s infinite;
+    animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #e953af; }
+    50% { color: #7a185d; }
+    100% { color: #ad4fca; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.confetti, .popups-container, .images-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Bloques de sorpresa */
+.popup {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #e91e63;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0;
+    animation: popup-appear 2s ease forwards, popup-disappear 2s ease 2s forwards;
+    text-align: center; /* Asegura que el texto se mantenga centrado */
+}
+
+@keyframes popup-appear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popup-disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Imágenes */
+.image {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    animation: image-appear 2s ease forwards, image-disappear 2s ease 2s forwards;
+}
+
+.image, .popup {
+    filter: drop-shadow(0 0 10px #e91e63);
+    transition: filter 0.5s;
+}
+
+.image:hover, .popup:hover {
+    filter: drop-shadow(0 0 20px #ff4081);
+}
+
+
+@keyframes image-appear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes image-disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: hsl(var(--hue), 70%, 50%);
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Estilos para el reproductor de música */
+#music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(233, 30, 99, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+#volume-control {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#current-song {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .center-message {
+        font-size: 3rem;
+    }
+
+    #music-player {
+        width: 90%;
+        padding: 5px;
+    }
+    
+    .controls button {
+        font-size: 20px;
+    }
+}

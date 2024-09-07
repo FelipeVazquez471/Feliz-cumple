@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="message-container">
+        <h1 class="center-message">¡Felices 2 décadas!</h1>
+    </div>
+    <div class="confetti" id="confetti"></div>
+    <div class="popups-container" id="popups-container"></div>
+    <div class="images-container" id="images-container"></div>
+    
+    <div id="music-player">
+        <audio id="audio-player"></audio>
+        <div class="controls">
+            <button id="prev-button">⏮️</button>
+            <button id="play-pause-button">▶️</button>
+            <button id="next-button">⏭️</button>
+        </div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1">
+        <div id="current-song"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
